@@ -24,13 +24,13 @@ VRChatアバターの接地調整（例: FloorAdjuster）後に、目標とす�
 
 ## 詳細仕様
 - スケール倍率 = `Target Eye Height / 現在高さ`
-- Root Transformに一律スケールを掛け、必要に応じて `VRCAvatarDescriptor.ViewPosition` のY値を再計算
-- `VRCAvatarDescriptor.ViewPosition` も同じ倍率でスケーリングし、カメラ位置がアバターの新しい頭の高さに追従
+- Root Transformに一律スケールを掛けた上で、`VRCAvatarDescriptor.ViewPosition` の **Y/Z** 値を同倍率で直接上書きし、FloorAdjuster(by scale) と同じく前後補正も維持
+- `VRCAvatarDescriptor.ViewPosition` のX値は変更せず、頭部の左右位置は現状維持
 - ビルド完了後、`ViewPointScaler` コンポーネントは複製側から削除
 - 極端に小さい/大きい値に対するクランプは行わないため、入力値に注意
 
 ## 実行順序とフォールバック
-- `ViewPointScalerPlugin` が `BuildPhase.Transforming` で `nadena.dev.ndmf.floor_adjuster` と `nadena.dev.modular-avatar` の後に実行されるよう指定
+- `ViewPointScalerPlugin` が `BuildPhase.Transforming` で `net.narazaka.vrchat.floor_adjuster`（FloorAdjuster by Narazaka）、`nadena.dev.ndmf.floor_adjuster`（旧版）、`nadena.dev.modular-avatar` の後に実行されるよう指定
 - NDMFが無効な場合は `ViewPointScalerBuildHook` (callbackOrder: `int.MaxValue - 512`) が同等処理を実行
 
 ## トラブルシューティング

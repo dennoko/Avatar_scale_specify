@@ -20,6 +20,7 @@ namespace AvatarScaleSpecify.Editor
 
             // Phase 2: Apply scaling after FloorAdjuster
             InPhase(BuildPhase.Transforming)
+                .AfterPlugin("net.narazaka.vrchat.floor_adjuster")
                 .AfterPlugin("nadena.dev.ndmf.floor_adjuster")
                 .AfterPlugin("nadena.dev.modular-avatar")
                 .Run(ScaleAvatarPass.Instance);

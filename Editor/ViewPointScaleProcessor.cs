@@ -134,17 +134,17 @@ namespace AvatarScaleSpecify.Editor
 
         private static void UpdateDescriptorView(VRCAvatarDescriptor descriptor, float scaleFactor)
         {
-            // According to user feedback, VRChat does not apply the Root Scale to the ViewPosition.
-            // Therefore, we must manually scale the ViewPosition values in the descriptor
-            // to match the new visual size of the avatar.
-            
+            // FloorAdjuster (by scale) also tweaks ViewPosition.y/z, and VRChat does not propagate
+            // root scale into the descriptor values. To stay consistent we scale only Y/Z directly.
             var oldView = descriptor.ViewPosition;
-            var newView = oldView * scaleFactor;
-            
-            Debug.Log($"[ViewPointScaler] Updating ViewPosition (Direct Scale): {oldView} -> {newView}");
+            var newView = new Vector3(
+                oldView.x,
+                oldView.y * scaleFactor,
+                oldView.z * scaleFactor);
+
+            Debug.Log($"[ViewPointScaler] Updating ViewPosition (Direct Y/Z Scale): {oldView} -> {newView}");
             descriptor.ViewPosition = newView;
-            
-            // Ensure the change is marked for saving/processing
+
             if (!Application.isPlaying)
             {
                 UnityEditor.EditorUtility.SetDirty(descriptor);
