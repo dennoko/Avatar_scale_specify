@@ -15,7 +15,7 @@ VRChatアバターの接地調整（例: FloorAdjuster）後に、目標とす�
 2. Unityを再起動またはスクリプトリロードして、メニュー `VRChat Utility/ViewPoint Scaler` が追加されたことを確認します。
 
 ## 使い方
-1. スケール調整したいアバターのルート（`VRCAvatarDescriptor` と同じ階層）を選択し、`VRChat Utility/ViewPoint Scaler` メニューから `ViewPointScaler` を追加。
+1. スケール調整したいアバターのルート（`VRCAvatarDescriptor` と同じ階層）を選択し、`VRChat Utility/ViewPoint Scaler` メニューから `ViewPointScaler` を追加。もしくは `GameObject/VRChat Utility/Add ViewPoint Scaler Child` で子オブジェクト `AvatarScaler` を生成し、その子にコンポーネントを付与すると、設定を別アバターへ複製しやすくなります。
 2. インスペクターで `Target Eye Height (m)` を設定。
 3. FloorAdjusterなどの接地ツールを実行し、アバターをY=0に合わせます。
 4. VRChatのビルド/アップロードを開始すると、NDMF Transformingフェーズで `ViewPointScaleProcessor` が倍率を計算し、複製アバターのRoot ScaleとDescriptorのViewPositionを自動調整します。
