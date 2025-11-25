@@ -17,7 +17,6 @@ VRChatアバターの接地調整（例: FloorAdjuster）後に、目標とす�
 ## 使い方
 1. スケール調整したいアバターのルート（`VRCAvatarDescriptor` と同じ階層）を選択し、`VRChat Utility/ViewPoint Scaler` メニューから `ViewPointScaler` を追加。
 2. インスペクターで `Target Eye Height (m)` を設定。
-   - ギズモ表示で現在高さ（赤）と目標高さ（水色）が可視化されます。
 3. FloorAdjusterなどの接地ツールを実行し、アバターをY=0に合わせます。
 4. VRChatのビルド/アップロードを開始すると、NDMF Transformingフェーズで `ViewPointScaleProcessor` が倍率を計算し、複製アバターのRoot ScaleとDescriptorのViewPositionを自動調整します。
 5. 成功するとコンソールに `[ViewPointScaler] Scaled avatar by ...` が出力され、元のシーンには変更が残りません。
