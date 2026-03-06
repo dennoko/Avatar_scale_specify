@@ -8,7 +8,7 @@ By disabling FloorAdjuster (or ignoring the height increase it causes), we can c
 ## Separate Scaler Object
 Add a menu item to create a child GameObject named "AvatarScaler" under the selected avatar root and attach the `ViewPointScaler` component to it.
 
-- **Menu Path**: `GameObject/VRChat Utility/Add ViewPoint Scaler Child` (Context menu on Hierarchy)
+-- **Menu Path**: `GameObject/dennokoworks/Add ViewPoint Scaler Child` (Context menu on Hierarchy)
 - **Behavior**:
     1. Create a new empty GameObject named "AvatarScaler" as a child of the selected object.
     2. Add `ViewPointScaler` component to the new object.

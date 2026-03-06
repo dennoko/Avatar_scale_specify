@@ -25,7 +25,7 @@ ScaleAvatarPass (NDMF / Transforming phase)
 | `Editor/ViewPointScalerRuntimeData.cs` | IEditorOnly除去前に設定値をコピーして保持するための隠しコンポーネント。 |
 
 #### Separate Scaler Object メニュー
-`GameObject/VRChat Utility/Add ViewPoint Scaler Child` を実行すると、選択中のアバター直下に `AvatarScaler` という子オブジェクトを自動生成し、その子に `ViewPointScaler` を付与できます。設定済みの子オブジェクトごとコピーして別アバターへ貼り付けられるため、複数アバター間で統一したスケール設定を共有したい場合に便利です。
+`GameObject/dennokoworks/Add ViewPoint Scaler Child` を実行すると、選択中のアバター直下に `AvatarScaler` という子オブジェクトを自動生成し、その子に `ViewPointScaler` を付与できます。設定済みの子オブジェクトごとコピーして別アバターへ貼り付けられるため、複数アバター間で統一したスケール設定を共有したい場合に便利です。
 
 ## 処理フロー詳細
 1. **ユーザー設定:** アバターRootに `ViewPointScaler` を追加し、`Target Eye Height (m)` を設定。
