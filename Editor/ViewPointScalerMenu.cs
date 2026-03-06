@@ -7,8 +7,8 @@ namespace AvatarScaleSpecify.Editor
 {
     internal static class ViewPointScalerMenu
     {
-        private const string MenuPath = "VRChat Utility/ViewPoint Scaler";
-        private const string ChildMenuPath = "GameObject/VRChat Utility/Add ViewPoint Scaler Child";
+        private const string MenuPath = "dennokoworks/ViewPoint Scaler";
+        private const string ChildMenuPath = "GameObject/dennokoworks/Add ViewPoint Scaler Child";
 
         [MenuItem(MenuPath, false, priority: 2000)]
         private static void AddComponent()
